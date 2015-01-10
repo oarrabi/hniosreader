@@ -422,7 +422,7 @@
 
     self.selectedRow = indexPath;
     
-    NSNumber *itemNumber =  self.top100StoriesIds[item];
+    NSNumber *itemNumber =  self.top100StoriesIds[item + 2];
     NSDictionary *storyDescription = [self.storyDescriptions objectForKey:itemNumber];
     NSString *user = [storyDescription objectForKey:@"by"];
     
@@ -431,7 +431,7 @@
     viewController.user = user;
     
     [self.navigationController pushViewController:viewController animated:YES];
-    
+  
 }
 
 
