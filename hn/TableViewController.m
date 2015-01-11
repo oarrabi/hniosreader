@@ -309,8 +309,10 @@
     NSDictionary *storyDescription = [self.storyDescriptions objectForKey:itemNumber];
     
     cell.titleView.text = [storyDescription objectForKey:@"title"];
-    
-    cell.pointsLabel.text = [NSString stringWithFormat:@"%@ points", [storyDescription objectForKey:@"score"]];
+  
+    NSNumber *number = [storyDescription objectForKey:@"score"];
+    int points = number.integerValue;
+    cell.pointsLabel.text = [NSString stringWithFormat:@"%@ points", points < 100? @(points) : @"--"];
     
     NSString *author = [storyDescription objectForKey:@"by"];
     
